@@ -1,0 +1,19 @@
+class Solution {
+    public int findExtra(int a[], int b[], int n) {
+        // add code here.
+        int extraIndex = n;
+        int st = 0, end = n-1;
+        
+        while(st < end){
+            int mid = (st+end)/2;
+            
+            if(a[mid] == b[mid]){
+                st = mid + 1;
+            }else{
+                end = mid; 
+            }
+        }
+        
+        return st;
+    }
+}

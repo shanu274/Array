@@ -1,0 +1,33 @@
+class Solution
+{
+    static int majorityElement(int a[], int size)
+    {
+       int maxcount = -1;
+       int count = 0;
+       
+       for(int num : a){
+           if(count == 0){
+               maxcount = num;
+           }
+           
+           if(maxcount == num){
+               count ++;
+           }else{
+               count--;
+           }
+       }
+       
+       count = 0;
+       for(int num : a){
+           if(num == maxcount){
+               count++;
+           }
+       }
+       
+       if(count > size / 2){
+           return maxcount;
+       }else{
+           return -1;
+       }
+    }
+}
